@@ -18,8 +18,3 @@ resource "aws_codecommit_repository" "sub-two-repository" {
 resource "aws_iam_user" "git_pull" {
   name = "git_pull"
 }
-
-resource "aws_iam_policy" "git_pull_policy" {
-    name = "git_pull_policy"
-    user = "${aws_iam_user.git_pull.name}"
-}
