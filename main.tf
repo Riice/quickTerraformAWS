@@ -33,7 +33,6 @@ data "aws_iam_user" "git_pull" {
       ]
     }
   ]
+}
 EOF  
-    }
-
 }
