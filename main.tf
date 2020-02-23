@@ -16,12 +16,12 @@ resource "aws_codecommit_repository" "sub-two-repository" {
 }
 
 resource "aws_iam_user" "git_pull" {
-  user_name = "git_pull"
+  name = "git_pull"
 }
 
 resource "aws_iam_policy" "git_pull_policy" {
     name = "git_pull_policy"
-    user = "{aws_iam_user.git_pull.name}"
+    user = "${aws_iam_user.git_pull.name}"
     policy = <<EOF
 {
   "Version": "2012-10-17",
