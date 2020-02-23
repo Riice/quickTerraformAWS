@@ -1,6 +1,6 @@
 # Set Provider
 provider "aws" {
-    region = "${var.aws_region}"
+    region = "us-east-1"
 }
 
 # Declaration and Data retrieval for Main Repo
