@@ -15,10 +15,13 @@ resource "aws_codecommit_repository" "sub-two-repository" {
   description     = "This is the Sample App Repository called Sub2"
 }
 
-
-data "aws_iam_user" "git_pull" {
+resource "aws_iam_user" "git_pull" {
   user_name = "git_pull"
-  policy = <<EOF
+}
+
+resource "aws_iam_policy" {
+    name = "git_pull_policy"
+    policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
