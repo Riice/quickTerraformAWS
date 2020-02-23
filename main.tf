@@ -22,21 +22,4 @@ resource "aws_iam_user" "git_pull" {
 resource "aws_iam_policy" "git_pull_policy" {
     name = "git_pull_policy"
     user = "${aws_iam_user.git_pull.name}"
-    policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "codeCommit:**"
-      ],
-      "Effect": "Allow",
-      "Resource": [
-           "aws_codecommit_repository.sub-two-repository.id",
-           "aws_codecommit_repository.main-one-repository.id"
-      ]
-    }
-  ]
-}
-EOF  
 }
